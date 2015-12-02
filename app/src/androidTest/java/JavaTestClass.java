@@ -3,4 +3,5 @@
  */
 public class JavaTestClass {
    public int number;
+   public String name;
 }
