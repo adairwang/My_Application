@@ -1,9 +1,16 @@
 package com.sinosoft.zkr_adair.myapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.sinosoft.zkr_adair.myapplication.utilities.MyTextUtil;
 
 public class MainActivity extends Activity {
 
@@ -33,5 +40,33 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void simple(View soruce) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle("简单对话框")
+//                .setIcon(R.drawable.icon)
+                .setMessage("对话框的测试内容\n第二行内容");
+        setPositiveButton(builder);
+        setNegativeButton(builder).create().show();
+    }
+
+    private AlertDialog.Builder setPositiveButton(AlertDialog.Builder builder)
+    {
+        return builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//                show.setText("单击了确定按钮！");
+            }
+        });
+    }
+    private AlertDialog.Builder setNegativeButton(AlertDialog.Builder builder)
+    {
+        return builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//                show.setText("单击了取消按钮！");
+            }
+        });
     }
 }
