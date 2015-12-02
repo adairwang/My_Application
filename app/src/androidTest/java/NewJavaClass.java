@@ -3,4 +3,5 @@
  */
 public class NewJavaClass {
     public String description;
+    public int setNumber;
 }
